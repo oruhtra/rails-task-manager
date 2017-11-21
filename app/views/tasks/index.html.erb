@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1 class="text-center">All your tasks</h1>
+      <ul class="list-unstyled">
+         <%= link_to new_task_path do %> <li class="card-new text-center">Add task</li>
+         <% end %>
+        <% @tasks.each do |task| %>
+        <%= link_to task_path(task.id) do %>
+          <li class="card">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-10">
+                  <p class="task-title"><%= task.title %> </p>
+                </div>
+                <div class="col-xs-2">
+                  <% if task.completed %>
+                    <i class="fa fa-check-square-o fa-3x" aria-hidden="true"></i>
+                  <% else %>
+                    <i class="fa fa-square-o fa-3x" aria-hidden="true"></i>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

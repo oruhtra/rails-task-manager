@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1 class="text-center"><%= @task.title %></h1>
+      <h2><%= @task.details %></h2>
+      <%= link_to "Edit task", edit_task_path(@task.id) %>
+      <%= link_to "Cancel task", task_path(@task.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>
+
